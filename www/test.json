@@ -1,0 +1,27 @@
+{
+    "firstName": "Ada",
+    "lastName": "Lovelace"
+    }
+
+        
+
+
+    Execution log for request 28c031b1-cbd7-4b10-a831-fd1afcda501c
+    Wed May 06 18:54:35 UTC 2020 : Starting execution for request: 28c031b1-cbd7-4b10-a831-fd1afcda501c
+    Wed May 06 18:54:35 UTC 2020 : HTTP Method: POST, Resource Path: /
+    Wed May 06 18:54:35 UTC 2020 : Method request path: {}
+    Wed May 06 18:54:35 UTC 2020 : Method request query string: {}
+    Wed May 06 18:54:35 UTC 2020 : Method request headers: {}
+    Wed May 06 18:54:35 UTC 2020 : Method request body before transformations: {
+        "firstName": "Ada",
+        "lastName": "Lovelace"
+        }
+    Wed May 06 18:54:35 UTC 2020 : Endpoint request URI: https://lambda.ap-southeast-1.amazonaws.com/2015-03-31/functions/arn:aws:lambda:ap-southeast-1:121219667380:function:HelloWorldFunction/invocations
+    Wed May 06 18:54:35 UTC 2020 : Endpoint request headers: {x-amzn-lambda-integration-tag=28c031b1-cbd7-4b10-a831-fd1afcda501c, Authorization=*****************************************************************************************************************************************************************************************************************************************************************************************************************************0c55d8, X-Amz-Date=20200506T185435Z, x-amzn-apigateway-api-id=v97wgm3qkh, X-Amz-Source-Arn=arn:aws:execute-api:ap-southeast-1:121219667380:v97wgm3qkh/test-invoke-stage/POST/, Accept=application/json, User-Agent=AmazonAPIGateway_v97wgm3qkh, X-Amz-Security-Token=IQoJb3JpZ2luX2VjEHIaDmFwLXNvdXRoZWFzdC0xIkgwRgIhANG4+g7WR6fzol0stm1d86nqNNXbhwCkot2/Kzkf7GN8AiEA5FPLoWbZplLrx883G3d0S0vPw6d6eItyfw0AqJoKtDoqxwMIq///////////ARACGgwxOTUxNDU2MDk2MzIiDBucrKS+0mQsW4HhUCqbAzNyrUP6/MExH/1eeWmPKHPqlmanAg4sVYg00ZOUUkJz1BKyPOWYSr8pJeQN3VvxstgQJ9txrk5IMZ25fzE3se+ovTEiFDtEStIJnL3YJICfKkkGUFtHplP2HdKT0zqBIrjdN/vcK [TRUNCATED]
+    Wed May 06 18:54:35 UTC 2020 : Endpoint request body after transformations: {"resource":"/","path":"/","httpMethod":"POST","headers":null,"multiValueHeaders":null,"queryStringParameters":null,"multiValueQueryStringParameters":null,"pathParameters":null,"stageVariables":null,"requestContext":{"resourceId":"e5x0ivbsmk","resourcePath":"/","httpMethod":"POST","extendedRequestId":"MH4s1GjcyQ0FiMg=","requestTime":"06/May/2020:18:54:35 +0000","path":"/","accountId":"121219667380","protocol":"HTTP/1.1","stage":"test-invoke-stage","domainPrefix":"testPrefix","requestTimeEpoch":1588791275671,"requestId":"28c031b1-cbd7-4b10-a831-fd1afcda501c","identity":{"cognitoIdentityPoolId":null,"cognitoIdentityId":null,"apiKey":"test-invoke-api-key","principalOrgId":null,"cognitoAuthenticationType":null,"userArn":"arn:aws:iam::121219667380:root","apiKeyId":"test-invoke-api-key-id","userAgent":"aws-internal/3 aws-sdk-java/1.11.761 Linux/4.9.184-0.1.ac.235.83.329.metal1.x86_64 OpenJDK_64-Bit_Server_VM/25.252-b09 java/1.8.0_252 vendor/Oracle_Corporation","accountId [TRUNCATED]
+    Wed May 06 18:54:35 UTC 2020 : Sending request to https://lambda.ap-southeast-1.amazonaws.com/2015-03-31/functions/arn:aws:lambda:ap-southeast-1:121219667380:function:HelloWorldFunction/invocations
+    Wed May 06 18:54:35 UTC 2020 : Received response. Status: 200, Integration latency: 230 ms
+    Wed May 06 18:54:35 UTC 2020 : Endpoint response headers: {Date=Wed, 06 May 2020 18:54:35 GMT, Content-Type=application/json, Content-Length=199, Connection=keep-alive, x-amzn-RequestId=ae97bd65-bdcf-46dc-b010-aee7ccd7b981, X-Amz-Function-Error=Unhandled, x-amzn-Remapped-Content-Length=0, X-Amz-Executed-Version=$LATEST, X-Amzn-Trace-Id=root=1-5eb307eb-2848add26f0f79db046294fb;sampled=0}
+    Wed May 06 18:54:35 UTC 2020 : Endpoint response body before transformations: {"errorMessage": "'firstName'", "errorType": "KeyError", "stackTrace": ["  File \"/var/task/lambda_function.py\", line 6, in lambda_handler\n    name = event['firstName'] +' '+ event['lastName']\n"]}
+    Wed May 06 18:54:35 UTC 2020 : Lambda execution failed with status 200 due to customer function error: 'firstName'. Lambda request id: ae97bd65-bdcf-46dc-b010-aee7ccd7b981
+    Wed May 06 18:54:35 UTC 2020 : Method completed with status: 502
