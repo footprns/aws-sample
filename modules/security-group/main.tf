@@ -16,8 +16,16 @@ resource "aws_security_group" "default" {
     cidr_blocks = ["182.70.42.83/32"]
   }
 
+  ingress {
+    description = "RDP from Intenet"
+    from_port   = 3389
+    to_port     = 3389
+    protocol    = "tcp"
+    cidr_blocks = ["182.70.42.83/32"]
+  }
+
   tags = {
-    Name = "allow_ssh"
+    Name = "allow_ssh_rdp"
   }
 }
 

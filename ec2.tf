@@ -19,15 +19,35 @@ module "security-group" {
 
 module "ec2" {
   source = "./modules/ec2"
-  ami = "ami-0ec225b5e01ccb706"
+  name = "amazon-linux"
+  ami = "ami-0ec225b5e01ccb706" # amazon linux
   instance_type = "t2.micro"
   key_name = module.imank-sshkey.key_name
   security_groups = ["${module.security-group.name}"]
+  get_password_data = false
+  volume_type = "standard" # magnetic 
 }
 
 output "public_ip" {
   value = module.ec2.public_ip
 }
 
+module "ec2_win" {
+  source = "./modules/ec2"
+  name = "amazon-win"
+  ami = "ami-0fdb514b22fa2aed1" # Microsoft Windows Server 2019 Base
+  instance_type = "t2.micro"
+  key_name = module.imank-sshkey.key_name
+  security_groups = ["${module.security-group.name}"]
+  get_password_data = true
+  volume_type = "gp2" # SSD 
+}
+
+output "public_ip_win" {
+  value = module.ec2_win.public_ip
+}
+output "password_data_win" {
+  value = rsadecrypt(module.ec2_win.password_data,var.ssh-private-key)
+}
 
 
