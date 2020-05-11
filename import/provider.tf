@@ -10,6 +10,9 @@ provider "aws" {
 #   # (resource arguments)
 # }
 
-resource "aws_lambda_function" "test_lambda" {
+# resource "aws_lambda_function" "test_lambda" {
+  # (resource arguments)
+# }
+resource "aws_security_group" "elb_sg" {
   # (resource arguments)
 }
