@@ -6,8 +6,8 @@ module "custom-autoscaling" {
   instance_type = "t2.micro"
   key_name = module.imank-sshkey.key_name
   security_groups = ["${module.security-group.id}"]
-  min_size = 2
-  max_size = 3
+  min_size = 1
+  max_size = 2
   vpc_zone_identifier = ["subnet-445cac0c", "subnet-6b07b832", "subnet-cab073ac"] 
 }
 /*

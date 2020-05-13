@@ -23,10 +23,10 @@ resource "aws_launch_configuration" "default" {
   instance_type = var.instance_type
   key_name = var.key_name
   security_groups = var.security_groups
-  user_data = <<EOM
-sudo yum -y install https://repo.saltstack.com/py3/amazon/salt-py3-amzn2-repo-latest.amzn2.noarch.rpm
-sudo yum -y clean expire-cache
-sudo yum -y install salt-minion
+  user_data =<<EOM
+#!/bin/bash
+curl -O https://raw.githubusercontent.com/footprns/aws-sample/master/www/install_salt.sh
+sudo bash install_salt.sh
   EOM
   lifecycle {
     create_before_destroy = true
