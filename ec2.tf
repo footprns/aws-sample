@@ -15,8 +15,7 @@ output "key_name" {
 module "security-group" {
   source = "./modules/security-group"
 }
-
-
+/*
 module "ec2" {
   source = "./modules/ec2"
   name = "amazon-linux"
@@ -49,5 +48,5 @@ output "public_ip_win" {
 output "password_data_win" {
   value = rsadecrypt(module.ec2_win.password_data,var.ssh-private-key)
 }
-
+*/
 

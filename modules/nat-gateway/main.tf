@@ -1,5 +1,8 @@
 variable "allocation_id" {}
 variable "subnet_id" {}
+variable "name" {
+  
+}
 
 
 resource "aws_nat_gateway" "default" {
@@ -7,7 +10,7 @@ resource "aws_nat_gateway" "default" {
   subnet_id     = var.subnet_id
 
   tags = {
-    Name = "gw NAT"
+    Name = "${var.name}"
   }
 }
 

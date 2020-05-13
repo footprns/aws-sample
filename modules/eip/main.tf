@@ -1,8 +1,10 @@
+variable "name" {}
+
 resource "aws_eip" "default" {
 #   instance = "${aws_instance.web.id}"
 #   vpc      = true
   tags = {
-    Name = "Custom IP"
+    Name = var.name
   }
 }
 
