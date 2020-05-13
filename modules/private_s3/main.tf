@@ -1,6 +1,4 @@
-variable "bucket" {
-  
-}
+variable "bucket" {}
 
 resource "aws_s3_bucket" "default" {
   bucket = var.bucket
